@@ -1,0 +1,3 @@
+rootProject.name = 'ylpay'
+
+include ':app'
