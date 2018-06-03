@@ -1,4 +1,12 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import {
+    AppRegistry
+} from 'react-native';
+import Root from './src/root';
+import {
+    YellowBox
+} from 'react-native';
 
-AppRegistry.registerComponent('ylpay', () => App);
+// 处理 react-navigation 带来的警告
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated']);
+
+AppRegistry.registerComponent('ylpay', () => Root);

@@ -1,3 +1,3 @@
 @echo off
-C:\Users\Administrator\AppData\Local\Android\Sdk\emulator\emulator.exe -netdelay none -netspeed full -avd Nexus_5X_API_24
+C:\Users\cyy\AppData\Local\Android\Sdk\tools\emulator.exe -netdelay none -netspeed full -avd Nexus_5X_API_24
 pause
