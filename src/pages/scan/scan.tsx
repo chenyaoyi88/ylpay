@@ -8,46 +8,36 @@ import {
 } from 'react-native';
 import { px2dp } from '../../utils';
 
+import { QRscanner } from 'react-native-qr-scanner';
+
 type Props = { navigation: Props_Navigation };
 export default class ScanScreen extends Component<Props> {
     static navigationOptions = {
         title: '扫码二维码'
     };
 
+    constructor(props: any) {
+      super(props);
+      this.state = {};
+    }
+
     render() {
         return (
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-              <Text style={styles.textBold}>扫码二维码 Screen</Text>
+            <View style={styles.container}>
+                <QRscanner onRead={this.onRead} finderY={-20} />
             </View>
         );
     }
 
-    onSuccess(e: any) {
-        console.warn(e);
-    }
-
-    componentDidMount() {
-        console.warn(123);
+    onRead = (res: any) => {
+        console.log(res);
     }
 }
 
 
 const styles = StyleSheet.create({
-    centerText: {
+    container: {
         flex: 1,
-        fontSize: 18,
-        padding: 32,
-        color: '#777',
-    },
-    textBold: {
-        fontWeight: '500',
-        color: '#000',
-    },
-    buttonText: {
-        fontSize: 21,
-        color: 'rgb(0,122,255)',
-    },
-    buttonTouchable: {
-        padding: 16,
-    },
+        backgroundColor: '#000'
+    }
 });

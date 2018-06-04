@@ -29,7 +29,7 @@ export default class Home extends Component<Props> {
 
         <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Scan')}>
           <View>
-            <Text style={styles.test}>测试扫码</Text>
+            <Text style={styles.test}>测试扫码~~</Text>
           </View>
         </TouchableWithoutFeedback>
       </View>
