@@ -1,12 +1,10 @@
 import React from 'react';
 import { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button, TouchableWithoutFeedback } from 'react-native';
-import { px2dp } from '../utils';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { px2dp } from '../../utils';
 
-type Props = {
-  navigation: any;
-};
-export default class Home extends Component<Props> {
+type Props = { navigation: Props_Navigation };
+export default class HomeScreen extends Component<Props> {
   static navigationOptions = {
     header: null,
     title: 'Home'
@@ -26,22 +24,12 @@ export default class Home extends Component<Props> {
             })
           }
         />
-
-        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Scan')}>
-          <View>
-            <Text style={styles.test}>测试扫码</Text>
-          </View>
-        </TouchableWithoutFeedback>
       </View>
     );
   }
 
   private goBackAndRefresh() {
     console.warn('回来刷新');
-  }
-
-  private _navigatorToDefault() {
-    this.props.navigation.navigate('Scan');
   }
 }
 

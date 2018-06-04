@@ -1,4 +1,7 @@
 import { createStackNavigator } from 'react-navigation';
+
+import { ScanScreen } from './pages';
+
 import DetailsScreen from './pages/details';
 import HomeScreen from './pages/home';
 
@@ -18,7 +21,8 @@ export default createStackNavigator(
   // 页面路由设置
   {
     Home: HomeScreen,
-    Details: DetailsScreen
+    Details: DetailsScreen,
+    Scan: ScanScreen
   },
   // 路由可选项设置
   {
@@ -58,7 +62,7 @@ export default createStackNavigator(
           inputRange: [index - 1, index, index + 1],
           outputRange: [width, 0, 0]
         });
-        
+
         const opacity = position.interpolate({
           inputRange: [index - 1, index - 0.99, index],
           outputRange: [0, 1, 1]
