@@ -5,9 +5,10 @@ import {
     Text,
     TouchableOpacity,
     Linking,
-    InteractionManager
+    InteractionManager,
+    Alert
 } from 'react-native';
-import { px2dp } from '../../utils';
+import { pxToDp } from '../../utils';
 
 import { QRscanner } from 'react-native-qr-scanner';
 
@@ -26,10 +27,7 @@ export default class ScanScreen extends Component<Props, State> {
     }
 
     componentDidMount() {
-        // InteractionManager.runAfterInteractions(() => {
-        // ...耗时较长的同步的任务...
         setTimeout(() => this.setState({ showCam: true }), 150);
-        // });
     }
 
     render() {
@@ -42,8 +40,16 @@ export default class ScanScreen extends Component<Props, State> {
         );
     }
 
-    onRead = (res: any) => {
-        console.log(res);
+    private onRead = (res: any) => {
+        Alert.alert(
+            '测试弹窗',
+            JSON.stringify(res),
+            [
+                { text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel' },
+                { text: 'OK', onPress: () => console.log('OK Pressed') },
+            ],
+            { cancelable: false }
+        )
     }
 }
 

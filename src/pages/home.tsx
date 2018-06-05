@@ -1,12 +1,15 @@
 import React from 'react';
 import { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button, TouchableWithoutFeedback, InteractionManager } from 'react-native';
-import { px2dp } from '../utils';
+import { Platform, StyleSheet, Text, View, Button, TouchableWithoutFeedback, InteractionManager, Alert, Image } from 'react-native';
+import { pxToDp } from '../utils';
+import { Item } from '../components/item';
+
+const IMG = require('../assets/images/auth.png');
 
 type Props = {
   navigation: any;
 };
-export default class Home extends Component<Props> {
+export default class Home extends Component<Props, any> {
   static navigationOptions = {
     header: null,
     title: 'Home'
@@ -32,6 +35,20 @@ export default class Home extends Component<Props> {
             <Text style={styles.test}>测试扫码~~</Text>
           </View>
         </TouchableWithoutFeedback>
+
+        <View style={styles.imgTest}>
+          <Image style={styles.imgTest} source={require('../assets/images/auth.png')} />
+        </View>
+
+        <View style={{ width: '100%' }}>
+          <Item
+            showIcon={'personal_center_loan_record'}
+            iconSize={40}
+            title="借款记录"
+            showDistance={true}
+            bottomLine={false}
+          ></Item>
+        </View>
       </View>
     );
   }
@@ -56,6 +73,10 @@ const styles = StyleSheet.create({
   test: {
     fontSize: 20,
     color: 'red',
-    margin: px2dp(20)
+    margin: pxToDp(20)
+  },
+  imgTest: {
+    width: 200,
+    height: 200,
   }
 });

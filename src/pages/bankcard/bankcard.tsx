@@ -1,13 +1,12 @@
 import React from 'react';
 import { Component } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { px2dp } from '../../utils';
+import { pxToDp } from '../../utils';
 
 type Props = { navigation: Props_Navigation };
 export default class BankcardScreen extends Component<Props> {
   static navigationOptions = {
-    header: null,
-    title: 'Home'
+    title: '银行卡'
   };
 
   render() {
@@ -28,6 +27,6 @@ const styles = StyleSheet.create({
   test: {
     fontSize: 20,
     color: 'red',
-    margin: px2dp(20)
+    margin: pxToDp(20)
   }
 });

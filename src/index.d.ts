@@ -14,7 +14,7 @@ interface Props_Navigation {
   goBack(name?: string, params?: any): void;
   // 获取参数
   getParam?: any;
-  setParams? any;
+  setParams?: any;
   // 获取参数
   state: {
     params: any;
