@@ -24,7 +24,7 @@ export default class ScanScreen extends Component<Props> {
     render() {
         return (
             <View style={styles.container}>
-                <QRscanner onRead={this.onRead} finderY={-20} />
+                <QRscanner onRead={this.onRead} hintTextStyle={styles.hitText} hintTextPosition={0} />
             </View>
         );
     }
@@ -39,5 +39,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#000'
+    },
+    hitText: {
+        color: '#fff'
     }
 });
