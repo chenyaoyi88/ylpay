@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import { Platform, StyleSheet, Text, View, Button, TouchableWithoutFeedback } from 'react-native';
+import { Platform, StyleSheet, Text, View, Button, TouchableWithoutFeedback, InteractionManager } from 'react-native';
 import { px2dp } from '../utils';
 
 type Props = {
@@ -41,7 +41,9 @@ export default class Home extends Component<Props> {
   }
 
   private _navigatorToDefault() {
-    this.props.navigation.navigate('Scan');
+    InteractionManager.runAfterInteractions(() => {
+      this.props.navigation.navigate('Scan');
+    });
   }
 }
 

@@ -31,9 +31,6 @@ export default class App extends Component<Props> {
       </View>
     );
   }
-  componentWillMount() {
-    console.warn(Provider);
-  }
 }
 
 const styles = StyleSheet.create({

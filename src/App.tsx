@@ -49,7 +49,7 @@ export default createStackNavigator(
     headerTransitionPreset: 'uikit',
     transitionConfig: () => ({
       transitionSpec: {
-        duration: 300,
+        duration: 150,
         easing: Easing.out(Easing.poly(4)),
         timing: Animated.timing
       },

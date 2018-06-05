@@ -5,26 +5,39 @@ import {
     Text,
     TouchableOpacity,
     Linking,
+    InteractionManager
 } from 'react-native';
 import { px2dp } from '../../utils';
 
 import { QRscanner } from 'react-native-qr-scanner';
 
 type Props = { navigation: Props_Navigation };
-export default class ScanScreen extends Component<Props> {
+type State = { showCam: Boolean };
+export default class ScanScreen extends Component<Props, State> {
     static navigationOptions = {
         title: '扫码二维码'
     };
 
     constructor(props: any) {
-      super(props);
-      this.state = {};
+        super(props);
+        this.state = {
+            showCam: false
+        };
+    }
+
+    componentDidMount() {
+        // InteractionManager.runAfterInteractions(() => {
+        // ...耗时较长的同步的任务...
+        setTimeout(() => this.setState({ showCam: true }), 150);
+        // });
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <QRscanner onRead={this.onRead} hintTextStyle={styles.hitText} hintTextPosition={0} />
+                {
+                    this.state.showCam ? <QRscanner onRead={this.onRead} hintTextStyle={styles.hitText} hintTextPosition={0} /> : null
+                }
             </View>
         );
     }
