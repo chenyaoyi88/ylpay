@@ -19,6 +19,6 @@ declare namespace BankCard {
     /** 右边渐变结束颜色 */
     endColor: string,
     /** 图标 */
-    icon: string;
+    icon: any;
   }
 }

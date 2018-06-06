@@ -8,8 +8,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import { pxToDp } from '../../index';
-import { SvgLinearGradient } from '../../index';
+import { pxToDp } from '../../utils';
+// import { SvgLinearGradient } from '../../index';
 import { bankCode } from './bankcode';
 
 class BankCard extends React.Component<BankCard.BankCardProps, any> {
@@ -33,12 +33,12 @@ class BankCard extends React.Component<BankCard.BankCardProps, any> {
 
     const { code, bankName, cardType, cardNoSuf } = this.props;
 
-    let bankCardOptions: BankCard.BankCardOptions = bankCode(code);
+    const bankCardOptions: BankCard.BankCardOptions = bankCode(code);
 
     return (
       <View style={[styles.bankCardWrap]}>
 
-        <SvgLinearGradient
+        {/* <SvgLinearGradient
           width={'100%'}
           height={pxToDp(200)}
           id={bankCardOptions.code}
@@ -46,7 +46,7 @@ class BankCard extends React.Component<BankCard.BankCardProps, any> {
           end={bankCardOptions.endColor}
           dir={'lr'}
           borderRadius={'20'}
-        ></SvgLinearGradient>
+        ></SvgLinearGradient> */}
 
         <View style={[styles.bankCardContent]}>
           <View style={[styles.bankCardUp]}>

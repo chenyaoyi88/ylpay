@@ -94,10 +94,13 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    // 告诉gradle 用哪个SDK版本来编译，和运行时要求的版本号没有关系；使用任何新添加的 API 就需要使用对应 Level 的 Android SDK。
+    compileSdkVersion 26
+    // android构建工具的版本,在SDK Manager中安装选择版本，buildToolsVersion的版本需要>=CompileSdkVersion; 高版本的build-tools 可以构建低版本编译的android程序
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
+        // 应用的包名
         applicationId "com.ylpay"
         minSdkVersion 16
         targetSdkVersion 22
@@ -154,7 +157,7 @@ dependencies {
         }
     }
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "com.android.support:appcompat-v7:27.0.3"
+    implementation "com.android.support:appcompat-v7:26.0.2"
     implementation "com.facebook.react:react-native:+"  // From node_modules
 }
 

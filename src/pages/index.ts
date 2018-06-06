@@ -1,9 +1,13 @@
-import HomeScreen from './home/home';
-import BankcardScreen from './bankcard/bankcard';
-import ScanScreen from './scan/scan';
+import Home from './home/home';
+import Bankcard from './bankcard/bankcard';
+import Scan from './scan/scan';
+import Record from './record/record';
+import Webview from './webview/webview';
 
 export {
-    HomeScreen,
-    BankcardScreen,
-    ScanScreen
+    Home,
+    Bankcard,
+    Scan,
+    Record,
+    Webview
 };

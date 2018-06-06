@@ -1,8 +1,8 @@
 import { createStackNavigator } from 'react-navigation';
 
-import { ScanScreen, HomeScreen, BankcardScreen } from './pages';
+import { Scan, Home, Bankcard, Record, Webview } from './pages';
 
-import DetailsScreen from './pages/details';
+import Details from './pages/details';
 // import HomeScreen from './pages/home';
 
 import React from 'react';
@@ -20,10 +20,12 @@ import {
 export default createStackNavigator(
   // 页面路由设置
   {
-    Home: HomeScreen,
-    Details: DetailsScreen,
-    Scan: ScanScreen,
-    Bankcard: BankcardScreen
+    Home,
+    Details,
+    Scan,
+    Bankcard,
+    Record,
+    Webview
   },
   // 路由可选项设置
   {
@@ -32,7 +34,7 @@ export default createStackNavigator(
     // 路由风格设置
     navigationOptions: {
       headerStyle: {
-        backgroundColor: '#E76F00'
+        backgroundColor: '#f08200'
       },
       headerTintColor: '#fff',
       headerTitleStyle: {

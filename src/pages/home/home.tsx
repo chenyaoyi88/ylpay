@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import { StyleSheet, Text, View, Button, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TouchableOpacity, Linking } from 'react-native';
 import { pxToDp } from '../../utils';
 import { Item } from '../../components';
 
@@ -62,6 +62,7 @@ export default class HomeScreen extends Component<Props, any> {
             showIcon={'personal_center_loan_record'}
             iconSize={40}
             title="交易记录"
+            onPress={this.goToPageRecord}
           // showDistance={true}
           // bottomLine={true}
           ></Item>
@@ -69,15 +70,15 @@ export default class HomeScreen extends Component<Props, any> {
             showIcon="personal_center_help"
             iconSize={40}
             title="帮助"
-          // onPress={this.handleHelp}
+            onPress={this.goToPageHelp}
           ></Item>
           <Item
-            title="关于我们"
+            title="测试"
             iconSize={48}
             showIcon="settings_about_us"
             status={true}
             statusText=" "
-          // onPress={this.handleAboutUs}
+            onPress={this.goToPageLink}
           ></Item>
         </View>
 
@@ -90,7 +91,6 @@ export default class HomeScreen extends Component<Props, any> {
   }
 
   private headerClick(index: number) {
-    console.warn(index);
     switch (index) {
       case 0:
         this.props.navigation.navigate('Scan');
@@ -102,6 +102,20 @@ export default class HomeScreen extends Component<Props, any> {
         break;
       default:
     }
+  }
+
+  private goToPageRecord = () => {
+    this.props.navigation.navigate('Record');
+  }
+
+  private goToPageHelp = () => {
+    this.props.navigation.navigate('Webview', {
+      title: '帮助',
+      webviewUrl: 'http://cyy-test.surge.sh/'
+    });
+  }
+
+  private goToPageLink = () => {
   }
 }
 

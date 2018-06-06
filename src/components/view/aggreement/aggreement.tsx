@@ -8,7 +8,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import { pxToDp } from '../../index';
+import { pxToDp } from '../../utils';
 
 interface AggreementProps {
   // 协议提示文字
@@ -16,9 +16,9 @@ interface AggreementProps {
   // 协议标题
   title?: string;
   // 协议icon大小
-  iconSize?: number;
+  iconSize: number;
   // 文字大小
-  fontSize?: number;
+  fontSize: number;
   // 协议组件容器样式
   wrapStyle?: any;
   // 协议icon容器样式
@@ -34,7 +34,7 @@ interface AggreementProps {
   // 抛出去的函数
   onSelected?: Function;
   // 是否选中
-  isSelected?: boolean;
+  isSelected: boolean;
 }
 
 class Aggreement extends React.Component<AggreementProps, any> {
@@ -44,7 +44,11 @@ class Aggreement extends React.Component<AggreementProps, any> {
     this.state = {
       isSelected: true
     };
+    this.isSelected = true;
   }
+
+  // 是否选中
+  private isSelected: boolean = true;
 
   static defaultProps = {
     tips: '"xxx"代表你已同意',
@@ -59,9 +63,6 @@ class Aggreement extends React.Component<AggreementProps, any> {
     textOnPress: () => {},
     titleOnPress: () => {}
   }
-
-  // 是否选中
-  private isSelected: boolean = true;
 
   componentWillMount() {
     this.setState({
@@ -105,7 +106,7 @@ class Aggreement extends React.Component<AggreementProps, any> {
       titleOnPress
     } = this.props;
 
-    let iconElement: JSX.Element = this.state.isSelected ? <Image style={[styles.agreementIcon,{
+    const iconElement: JSX.Element = this.state.isSelected ? <Image style={[styles.agreementIcon,{
           width: pxToDp(iconSize + 1), 
           height: pxToDp(iconSize + 1)
         }]} source={require('./success.png')}></Image> : <View style={[styles.agreementIcon, iconStyle, {

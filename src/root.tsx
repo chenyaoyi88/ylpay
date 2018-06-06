@@ -20,4 +20,9 @@ export default class Root extends Component<Props> {
     // );
     return <App />;
   }
+
+  componentDidMount() {
+    setTimeout(() => {
+    }, 1000);
+  }
 }
