@@ -8,6 +8,8 @@ import { StyleSheet, Text, View } from 'react-native';
 // // 调用 store 文件中的 rootReducer 常量中保存的方法
 // const store = configureStore();
 
+import SplashScreen from 'react-native-splash-screen';
+
 import App from './App';
 
 type Props = {};
@@ -23,6 +25,7 @@ export default class Root extends Component<Props> {
 
   componentDidMount() {
     setTimeout(() => {
+      SplashScreen.hide();
     }, 1000);
   }
 }

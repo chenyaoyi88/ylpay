@@ -3,6 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <!--启用app主题透明选项来解决在APP启动时因主题原因导致的短暂白屏的问题-->
+        <item name="android:windowIsTranslucent">true</item>
     </style>
 
 </resources>
